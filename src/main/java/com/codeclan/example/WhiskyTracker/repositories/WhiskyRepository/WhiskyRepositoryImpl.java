@@ -1,6 +1,7 @@
 package com.codeclan.example.WhiskyTracker.repositories.WhiskyRepository;
 
 
+import com.codeclan.example.WhiskyTracker.models.RegionType;
 import com.codeclan.example.WhiskyTracker.models.Whisky;
 import org.hibernate.Criteria;
 import org.hibernate.Session;

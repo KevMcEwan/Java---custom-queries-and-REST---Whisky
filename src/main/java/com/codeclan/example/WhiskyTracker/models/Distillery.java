@@ -16,12 +16,12 @@ public class Distillery {
     private String name;
 
     @Column(name = "region")
-    private String region;
+    private RegionType region;
 
     @OneToMany(mappedBy = "distillery", fetch = FetchType.LAZY)
     private List<Whisky> whiskies;
 
-    public Distillery(String name, String region) {
+    public Distillery(String name, RegionType region ) {
         this.name = name;
         this.region = region;
         this.whiskies = new ArrayList<>();
@@ -47,10 +47,10 @@ public class Distillery {
     }
 
     public String getRegion() {
-        return region;
+        return region.getName();
     }
 
-    public void setRegion(String region) {
+    public void setRegion(RegionType region) {
         this.region = region;
     }
 

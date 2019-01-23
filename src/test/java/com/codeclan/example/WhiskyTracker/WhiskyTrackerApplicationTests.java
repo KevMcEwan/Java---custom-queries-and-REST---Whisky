@@ -1,6 +1,7 @@
 package com.codeclan.example.WhiskyTracker;
 
 import com.codeclan.example.WhiskyTracker.models.Distillery;
+import com.codeclan.example.WhiskyTracker.models.RegionType;
 import com.codeclan.example.WhiskyTracker.models.Whisky;
 import com.codeclan.example.WhiskyTracker.repositories.DistilleryRepository.DistilleryRepository;
 import com.codeclan.example.WhiskyTracker.repositories.WhiskyRepository.WhiskyRepository;
@@ -35,7 +36,7 @@ public class WhiskyTrackerApplicationTests {
 	}
 
 	@Test
-	public void canFindDistelleriesByRegion(){
+	public void canFindDistilleriesByRegion(){
 		List<Distillery> distilleries = distilleryRepository.findDistilleriesByRegion("Highland");
 		assertEquals(1, distilleries.size());
 	}
@@ -46,7 +47,10 @@ public class WhiskyTrackerApplicationTests {
 		assertEquals(1, whiskies.size());
 	}
 
-//	@Test
-//	public void
+	@Test
+	public void canGetOrdinal(){
+		assertEquals(1, RegionType.LOWLAND.getOrdinal());
+	}
+
 
 }
