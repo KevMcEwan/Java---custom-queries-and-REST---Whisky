@@ -23,7 +23,7 @@ public class WhiskyRepositoryImpl implements WhiskyRepositoryCustom {
 
         Session session = entityManager.unwrap(Session.class);
         Criteria cr = session.createCriteria(Whisky.class);
-        cr.createAlias("distilleries", "distilleryAlias");
+        cr.createAlias("distillery", "distilleryAlias");
         cr.add(Restrictions.eq("distilleryAlias.region", region));
         results = cr.list();
         return results;
